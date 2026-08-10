@@ -38,11 +38,11 @@ Sistema desarrollado en Python para gestionar productos de una tienda.
 
 
 
-\- Integrante 1
+\- Alex Heredia
 
-\- Integrante 2
+\- Bryan Castro
 
-\- Integrante 3
+\- Joseph Mejia
 
 
 
