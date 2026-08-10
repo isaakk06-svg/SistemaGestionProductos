@@ -37,7 +37,13 @@ def buscar_producto():
         print("No hay productos registrados.")
         return
 
-    nombre_buscar = input("Ingrese el nombre del producto que desea buscar: ")
+    nombre_buscar = input(
+        "Ingrese el nombre del producto que desea buscar: "
+    ).strip()
+
+    if not nombre_buscar:
+        print("Debe ingresar un nombre para realizar la búsqueda.")
+        return
 
     encontrado = False
 
