@@ -42,7 +42,7 @@ def buscar_producto():
     encontrado = False
 
     for producto in productos:
-        if producto["nombre"].lower() == nombre_buscar.lower():
+        if nombre_buscar.lower() in producto["nombre"].lower():
             print("\n--- PRODUCTO ENCONTRADO ---")
             print(f"Nombre: {producto['nombre']}")
             print(f"Precio: ${producto['precio']:.2f}")
