@@ -20,6 +20,10 @@ def agregar_producto():
 def buscar_producto():
     nombre_buscar = input("Ingrese el nombre del producto a buscar: ").lower()
 
+    if not nombre_buscar.strip():
+        print("Debe ingresar un nombre para buscar.")
+        return
+
     encontrados = []
 
     for producto in productos:
@@ -38,7 +42,6 @@ def buscar_producto():
             f"Precio: ${producto['precio']:.2f} | "
             f"Cantidad: {producto['cantidad']}"
         )
-
 
 def menu():
     while True:
