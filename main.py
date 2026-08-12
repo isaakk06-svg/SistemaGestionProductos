@@ -46,8 +46,9 @@ def menu():
         print("   SISTEMA DE GESTIÓN DE PRODUCTOS")
         print("=================================")
         print("1. Agregar producto")
-        print("2. Mostrar productos")
-        print("3. Salir")
+	print("2. Mostrar productos")
+	print("3. Buscar producto")
+	print("4. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -57,12 +58,12 @@ def menu():
         elif opcion == "2":
             mostrar_productos()
 
-        elif opcion == "3":
-            print("Programa finalizado.")
-            break
+       elif opcion == "3":
+    buscar_producto()
 
-        else:
-            print("Opción no válida.")
+	elif opcion == "4":
+    print("Programa finalizado.")
+    break
 
 
 menu()
