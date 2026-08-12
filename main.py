@@ -17,14 +17,22 @@ def agregar_producto():
     print("Producto agregado correctamente.")
 
 
-def mostrar_productos():
-    if not productos:
-        print("No hay productos registrados.")
+def buscar_producto():
+    nombre_buscar = input("Ingrese el nombre del producto a buscar: ").lower()
+
+    encontrados = []
+
+    for producto in productos:
+        if nombre_buscar in producto["nombre"].lower():
+            encontrados.append(producto)
+
+    if not encontrados:
+        print("No se encontraron productos.")
         return
 
-    print("\n--- LISTA DE PRODUCTOS ---")
+    print("\n--- PRODUCTOS ENCONTRADOS ---")
 
-    for i, producto in enumerate(productos, start=1):
+    for i, producto in enumerate(encontrados, start=1):
         print(
             f"{i}. {producto['nombre']} | "
             f"Precio: ${producto['precio']:.2f} | "
