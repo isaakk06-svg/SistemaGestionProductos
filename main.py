@@ -17,21 +17,42 @@ def agregar_producto():
     print("Producto agregado correctamente.")
 
 
-def buscar_producto():
-    nombre_buscar = input("Ingrese el nombre del producto a buscar: ").lower()
+def mostrar_productos():
+    if not productos:
+        print("No hay productos registrados.")
+        return
 
-    if not nombre_buscar.strip():
-        print("Debe ingresar un nombre para buscar.")
+    print("\n--- LISTA DE PRODUCTOS ---")
+
+    for i, producto in enumerate(productos, start=1):
+        print(
+            f"{i}. {producto['nombre']} | "
+            f"Precio: ${producto['precio']:.2f} | "
+            f"Cantidad: {producto['cantidad']}"
+        )
+
+
+def buscar_producto():
+    if not productos:
+        print("No hay productos registrados.")
+        return
+
+    nombre_buscar = input(
+        "Ingrese el nombre del producto que desea buscar: "
+    ).strip()
+
+    if not nombre_buscar:
+        print("Debe ingresar un nombre para realizar la búsqueda.")
         return
 
     encontrados = []
 
     for producto in productos:
-        if nombre_buscar in producto["nombre"].lower():
+        if nombre_buscar.lower() in producto["nombre"].lower():
             encontrados.append(producto)
 
     if not encontrados:
-        print("No se encontraron productos.")
+        print("Producto no encontrado.")
         return
 
     print("\n--- PRODUCTOS ENCONTRADOS ---")
@@ -43,15 +64,16 @@ def buscar_producto():
             f"Cantidad: {producto['cantidad']}"
         )
 
+
 def menu():
     while True:
         print("\n=================================")
         print("   SISTEMA DE GESTIÓN DE PRODUCTOS")
         print("=================================")
         print("1. Agregar producto")
-	print("2. Mostrar productos")
-	print("3. Buscar producto")
-	print("4. Salir")
+        print("2. Mostrar productos")
+        print("3. Buscar producto")
+        print("4. Salir")
 
         opcion = input("Seleccione una opción: ")
 
@@ -61,12 +83,15 @@ def menu():
         elif opcion == "2":
             mostrar_productos()
 
-       elif opcion == "3":
-    buscar_producto()
+        elif opcion == "3":
+            buscar_producto()
 
-	elif opcion == "4":
-    print("Programa finalizado.")
-    break
+        elif opcion == "4":
+            print("Programa finalizado.")
+            break
+
+        else:
+            print("Opción no válida.")
 
 
 menu()
