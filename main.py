@@ -45,19 +45,24 @@ def buscar_producto():
         print("Debe ingresar un nombre para realizar la búsqueda.")
         return
 
-    encontrado = False
+    encontrados = []
 
     for producto in productos:
         if nombre_buscar.lower() in producto["nombre"].lower():
-            print("\n--- PRODUCTO ENCONTRADO ---")
-            print(f"Nombre: {producto['nombre']}")
-            print(f"Precio: ${producto['precio']:.2f}")
-            print(f"Cantidad: {producto['cantidad']}")
-            encontrado = True
-            break
+            encontrados.append(producto)
 
-    if not encontrado:
+    if not encontrados:
         print("Producto no encontrado.")
+        return
+
+    print("\n--- PRODUCTOS ENCONTRADOS ---")
+
+    for i, producto in enumerate(encontrados, start=1):
+        print(
+            f"{i}. {producto['nombre']} | "
+            f"Precio: ${producto['precio']:.2f} | "
+            f"Cantidad: {producto['cantidad']}"
+        )
 
 
 def menu():
