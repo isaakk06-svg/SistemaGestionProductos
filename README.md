@@ -52,3 +52,23 @@ Sistema desarrollado en Python para gestionar productos de una tienda.
 
 El proyecto será desarrollado mediante Git y GitHub utilizando ramas independientes, commits y Pull Requests.
 
+\## Ejecución del proyecto
+
+
+
+Para ejecutar el sistema, siga estos pasos:
+
+
+
+1\. Clone el repositorio.
+
+2\. Ingrese a la carpeta del proyecto.
+
+3\. Verifique que Python esté instalado.
+
+4\. Ejecute el programa utilizando el comando `python main.py`.
+
+
+
+El sistema mostrará un menú en consola desde el cual se podrán utilizar las funcionalidades disponibles.
+
